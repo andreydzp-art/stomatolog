@@ -1,6 +1,20 @@
 # Домен nkolesnik.com
 
-Сайт — статический HTML в корне репозитория. Публикация через **GitHub Pages**.
+Сайт — статический HTML в корне репозитория. **Прод:** тот же VPS (FastPanel), что [iqmoschool.ru](https://www.iqmoschool.ru/) и epizodes.ru.
+
+## Деплой на VPS (основной способ)
+
+В репозитории **IQMO** (монорепо с `deploy.yml`): **Actions → Deploy stomatolog (nkolesnik.com) → Run workflow**.
+
+Workflow: `.github/workflows/deploy-stomatolog.yml` — checkout `andreydzp-art/stomatolog`, rsync на docroot nkolesnik.com, smoke по заголовку страницы.
+
+Секреты те же: `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`.
+
+---
+
+## GitHub Pages (запасной, если DNS на GitHub)
+
+Сайт — статический HTML. Публикация через **GitHub Pages** (сейчас DNS на VPS — этот блок не используется).
 
 ## 1. Включить Pages (один раз)
 
