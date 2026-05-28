@@ -1,4 +1,4 @@
-# Деплой nkolesnik.com на VPS (FastPanel). Секреты — в ЭТОМ репозитории (stomatolog).
+# Деплой nkolesnik.com по SFTP (FASTPANEL). Секреты — в репозитории stomatolog.
 name: Deploy to nkolesnik.com
 
 on:
@@ -22,57 +22,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Rsync → nkolesnik.com docroot
-        env:
-          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          DEPLOY_USER_IN: nkolesnik_co_usr
-          DEPLOY_HOST_IN: ${{ secrets.DEPLOY_HOST }}
-        run: |
-          set -euo pipefail
-          trim() { printf '%s' "$1" | tr -d '\r\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'; }
-          DEPLOY_USER=$(trim "${DEPLOY_USER_IN:-}")
-          DEPLOY_HOST=$(trim "${DEPLOY_HOST_IN:-}")
-          if [ -z "$SSH_KEY" ] || [ -z "$DEPLOY_HOST" ]; then
-            echo "Добавьте Secrets в stomatolog: DEPLOY_HOST, DEPLOY_SSH_KEY (см. docs/DEPLOY.md)"
-            exit 1
-          fi
-          install -d -m 700 ~/.ssh
-          echo "$SSH_KEY" | tr -d '\r' > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          SSH_BASE=(ssh -i "${HOME}/.ssh/deploy_key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -l "$DEPLOY_USER")
-
-          echo "=== discover docroot (${DEPLOY_USER}) ==="
-          DEST=$("${SSH_BASE[@]}" "$DEPLOY_HOST" 'set -e
-            for c in \
-              "$HOME/data/www/nkolesnik.com/public_html" \
-              "$HOME/data/www/nkolesnik.com" \
-              /var/www/nkolesnik_co_usr/data/www/nkolesnik.com/public_html \
-              /var/www/nkolesnik_co_usr/data/www/nkolesnik.com; do
-              if [ -d "$c" ]; then echo "$c"; exit 0; fi
-            done
-            if [ -d "$HOME/data/www" ]; then
-              site=$(ls -1 "$HOME/data/www" 2>/dev/null | head -1 || true)
-              if [ -n "$site" ] && [ -d "$HOME/data/www/$site" ]; then
-                echo "$HOME/data/www/$site"; exit 0
-              fi
-            fi
-            echo "ERROR: docroot not found" >&2
-            ls -la "$HOME/data/www/" >&2 || true
-            exit 1')
-          echo "=== docroot=$DEST ==="
-
-          RSYNC_SSH="ssh -i ${HOME}/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -l \"$DEPLOY_USER\""
-          rsync -az --delete \
-            -e "$RSYNC_SSH" \
-            --exclude '.git/' \
-            --exclude '.github/' \
-            --exclude 'docs/' \
-            --exclude 'README.md' \
-            --exclude 'CURSOR.md' \
-            --exclude 'CNAME' \
-            ./ \
-            "${DEPLOY_HOST}:${DEST}/"
-          echo "=== rsync OK ==="
+      - name: Deploy via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          protocol: sftp
+          local-dir: ./
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/docs/**
+            README.md
+            CURSOR.md
+            CNAME
+            .nojekyll
+            stoma-deploy.zip
 
       - name: Smoke nkolesnik.com
         run: |
@@ -83,7 +51,8 @@ jobs:
               echo "=== smoke OK ==="
               exit 0
             fi
+            echo "attempt $i: waiting..."
             sleep 5
           done
-          echo "=== smoke FAILED ==="
+          echo "=== smoke FAILED — check https://nkolesnik.com/ ==="
           exit 1

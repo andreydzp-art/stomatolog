@@ -9,10 +9,11 @@
 
 | Secret | Значение |
 |--------|----------|
-| `DEPLOY_HOST` | IP сервера FastPanel, у вас: `5.188.31.205` |
-| `DEPLOY_SSH_KEY` | Приватный ключ (файл `C:\Users\user\.ssh\stoma_nkolesnik_deploy`) |
+| `FTP_HOST` | `5.188.31.205` |
+| `FTP_USERNAME` | `nkolesnik_co` |
+| `FTP_PASSWORD` | пароль из FASTPANEL (шаг «Сгенерировать» у FTP-аккаунта) |
 
-Публичный ключ (`.pub`) — в FASTPANEL для пользователя сайта **nkolesnik_co_usr** (FTP / SSH / SFTP), см. [FASTPANEL-SSH.md](./FASTPANEL-SSH.md).
+Старые `DEPLOY_HOST` / `DEPLOY_SSH_KEY` больше не используются (можно удалить).
 
 ## Автодеплой
 
