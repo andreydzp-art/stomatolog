@@ -4,11 +4,7 @@
 
 ## Деплой на VPS (основной способ)
 
-В репозитории **IQMO** (монорепо с `deploy.yml`): **Actions → Deploy stomatolog (nkolesnik.com) → Run workflow**.
-
-Workflow: `.github/workflows/deploy-stomatolog.yml` — checkout `andreydzp-art/stomatolog`, rsync на docroot nkolesnik.com, smoke по заголовку страницы.
-
-Секреты те же: `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`.
+Репозиторий **stomatolog**: см. [DEPLOY.md](./DEPLOY.md) — секреты и workflow в этом репо, не в IQMO.
 
 ---
 
