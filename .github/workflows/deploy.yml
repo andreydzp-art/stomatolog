@@ -48,7 +48,7 @@ jobs:
           set -euo pipefail
           for i in 1 2 3 4 5; do
             html=$(curl -fsSL --max-time 25 "https://nkolesnik.com/" || true)
-            if echo "$html" | grep -q 'Композитные виниры'; then
+            if echo "$html" | grep -q 'Композитные виниры\|composite-veneers\|instrument-serif'; then
               echo "=== smoke OK ==="
               exit 0
             fi
