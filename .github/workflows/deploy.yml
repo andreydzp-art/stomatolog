@@ -48,9 +48,9 @@ jobs:
           set -euo pipefail
           for i in 1 2 3 4 5; do
             curl -fsSL --max-time 25 "https://nkolesnik.com/" -o /tmp/nkolesnik.html || true
-            if grep -qF 'instrument-serif' /tmp/nkolesnik.html \
-               && grep -qF 'hero-grid' /tmp/nkolesnik.html \
-               && grep -qF 'Natalia Kolesnik' /tmp/nkolesnik.html; then
+            if grep -qF 'hero-grid' /tmp/nkolesnik.html \
+               && grep -qF 'Natalia Kolesnik' /tmp/nkolesnik.html \
+               && grep -qF 'doctor-hero2.png' /tmp/nkolesnik.html; then
               echo "=== smoke OK ==="
               exit 0
             fi
