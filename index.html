@@ -162,29 +162,80 @@
   @media (max-width:720px){ .section-head{margin-bottom:40px} }
 
   /* ——— hero ——— */
-  .hero{padding:48px 0 140px;position:relative;overflow:hidden}
+  .hero{padding:40px 0 112px;position:relative;overflow:hidden}
   @media (max-width:720px){ .hero{padding:24px 0 70px} }
   .hero-grid{
-    display:grid;grid-template-columns: 1.1fr 1fr; gap:64px; align-items:center;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;
   }
-  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr; gap:48px} }
+  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
 
-  .hero h1{margin:18px 0 26px}
-  .hero h1 .accent{font-style:italic; color: var(--gold)}
-  .hero .lede{margin-bottom:38px}
+  .hero h1{
+    margin:16px 0 22px;
+    font-size:clamp(38px,5.1vw,74px);
+    line-height:0.96;
+    letter-spacing:-0.022em;
+    font-synthesis:none;
+  }
+  .hero h1 .accent{font-style:italic;color:var(--gold);letter-spacing:-0.018em}
+  .hero .lede{margin-bottom:32px;max-width:46ch}
+  .hero .eyebrow{letter-spacing:.17em}
 
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
-  .hero-note{font-size:14px;color:var(--ink-mute);max-width:48ch;line-height:1.5}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+  .hero-note{font-size:14px;color:var(--ink-mute);max-width:44ch;line-height:1.5}
   .hero-note::before{content:""; display:inline-block; width:6px;height:6px;border-radius:50%; background:var(--gold); margin-right:10px; vertical-align:middle; transform:translateY(-2px)}
 
   .hero-portrait{position:relative}
   .portrait-frame{
-    aspect-ratio: 4/5;
-    border-radius: 240px 240px 32px 32px;
+    aspect-ratio:4/5;
+    border-radius:240px 240px 32px 32px;
     overflow:hidden;
-    background: linear-gradient(160deg, var(--sand-soft) 0%, var(--sand) 60%, var(--taupe) 100%);
-    box-shadow: var(--shadow-card);
+    background:linear-gradient(160deg,var(--sand-soft) 0%,var(--sand) 60%,var(--taupe) 100%);
+    box-shadow:var(--shadow-card);
     position:relative;
+    width:100%;
+  }
+
+  /* hero — desktop: типографика и пропорции как в Claude Design (~1440px) */
+  @media (min-width:981px){
+    .hero{padding:32px 0 100px}
+    .hero-grid{
+      grid-template-columns:minmax(0,500px) minmax(0,1fr);
+      gap:52px;
+      align-items:center;
+    }
+    .hero-grid > .reveal:first-child{max-width:500px}
+    .hero h1{
+      font-size:clamp(40px,4.85vw,74px);
+      line-height:0.94;
+      letter-spacing:-0.024em;
+      margin:14px 0 20px;
+    }
+    .hero .lede{font-size:clamp(17px,1.15vw,19px);line-height:1.52;max-width:44ch}
+    .hero-portrait{
+      justify-self:end;
+      width:112%;
+      max-width:620px;
+    }
+    .hero-strip{margin-top:60px;padding-top:28px}
+  }
+  @media (min-width:1440px){
+    .hero{padding:28px 0 92px}
+    .hero-grid{
+      grid-template-columns:minmax(0,508px) minmax(0,592px);
+      gap:44px;
+      justify-content:space-between;
+    }
+    .hero-grid > .reveal:first-child{max-width:508px}
+    .hero h1{
+      font-size:74px;
+      line-height:0.92;
+      letter-spacing:-0.026em;
+      margin:12px 0 18px;
+    }
+    .hero h1 .accent{letter-spacing:-0.02em}
+    .hero .lede{font-size:19px;margin-bottom:30px}
+    .hero-portrait{width:114%;max-width:636px}
+    .hero-strip{margin-top:52px}
   }
   .portrait-frame image-slot{
     width:100%; height:100%;
@@ -274,8 +325,8 @@
 
   /* hero metric strip */
   .hero-strip{
-    margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px;
-    padding-top:32px;border-top:1px solid var(--hairline-soft);
+    margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px;
+    padding-top:28px;border-top:1px solid var(--hairline-soft);
   }
   .hero-strip .item .n{font-family:var(--serif);font-size:38px;line-height:1;display:block;letter-spacing:-.02em}
   .hero-strip .item .l{font-size:13px;color:var(--ink-mute);margin-top:8px;display:block;line-height:1.4}
