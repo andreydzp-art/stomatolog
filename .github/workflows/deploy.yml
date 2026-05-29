@@ -47,13 +47,16 @@ jobs:
         run: |
           set -euo pipefail
           for i in 1 2 3 4 5; do
-            html=$(curl -fsSL --max-time 25 "https://nkolesnik.com/" || true)
-            if echo "$html" | grep -q 'Композитные виниры\|composite-veneers\|instrument-serif'; then
+            curl -fsSL --max-time 25 "https://nkolesnik.com/" -o /tmp/nkolesnik.html || true
+            if grep -qF 'instrument-serif' /tmp/nkolesnik.html \
+               && grep -qF 'hero-grid' /tmp/nkolesnik.html \
+               && grep -qF 'Natalia Kolesnik' /tmp/nkolesnik.html; then
               echo "=== smoke OK ==="
               exit 0
             fi
-            echo "attempt $i: waiting..."
+            echo "attempt $i: waiting for CDN/cache..."
             sleep 5
           done
-          echo "=== smoke FAILED — check https://nkolesnik.com/ ==="
+          echo "=== smoke FAILED (FTP may still have succeeded) ==="
+          head -c 400 /tmp/nkolesnik.html 2>/dev/null || true
           exit 1
