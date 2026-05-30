@@ -44,6 +44,13 @@ function fixAssetPaths(html) {
     .replace(/url\(images\//g, 'url(/images/');
 }
 
+function fixFooterPadding(html) {
+  return html.replace(
+    /footer\{padding:48px 0 120px;/g,
+    'footer{padding:48px 0;'
+  );
+}
+
 function fixFooterLinks(html) {
   return html.replace(
     /    <div class="foot-links">[\s\S]*?      <a href="#" data-msg="telegram">/,
@@ -78,6 +85,7 @@ function prepareHtml(raw) {
   html = applyHeroBundle(html, heroBundle);
   html = applyDesktop1200(html, desktop1200);
   html = fixFooterLinks(html);
+  html = fixFooterPadding(html);
   return html;
 }
 
@@ -99,7 +107,9 @@ const pages = [
 
 for (const { dir, source, polished } of pages) {
   const raw = fs.readFileSync(source, 'utf8');
-  const html = polished ? fixFooterLinks(fixAssetPaths(raw)) : prepareHtml(raw);
+  const html = polished
+    ? fixFooterPadding(fixFooterLinks(fixAssetPaths(raw)))
+    : prepareHtml(raw);
   const outDir = path.join(ROOT, dir);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
@@ -107,6 +117,8 @@ for (const { dir, source, polished } of pages) {
 }
 
 // Root: absolute asset paths (same as /luminir content)
-const rootHtml = fixFooterLinks(fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')));
+const rootHtml = fixFooterPadding(
+  fixFooterLinks(fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')))
+);
 fs.writeFileSync(path.join(ROOT, 'index.html'), rootHtml, 'utf8');
 console.log('OK / (root index.html paths)');
