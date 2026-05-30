@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Композитные виниры — эстетичная улыбка без сложного лечения</title>
+<title>Керамические виниры — естественная улыбка</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +110,7 @@
   .btn:hover{transform:translateY(-1px)}
   .btn:active{transform:translateY(0)}
   .btn .ic{width:18px;height:18px;flex:none}
+  /* primary CTA \u2014 matches the "\u041a\u0430\u043a \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442" secondary button */
   .btn-primary{
     background: var(--paper);
     color: var(--ink);
@@ -131,7 +132,7 @@
   .btn-ghost:hover{background:rgba(0,0,0,.025)}
   .btn-lg{padding:20px 30px;font-size:16px}
 
-  /* messenger buttons — equal weight, light; gold hover */
+  /* messenger buttons — all three equal weight, light, branded chip; secondary to the primary CTA */
   .btn-msg{
     background: var(--paper); color: var(--ink);
     border:1px solid var(--hairline);
@@ -139,11 +140,13 @@
     padding-left:18px;
     transition: transform .18s ease, box-shadow .25s ease, background .25s ease, color .2s ease, border-color .25s ease;
   }
+  /* hover — soft gold ring + glow, no aggressive fill */
   .btn-msg:hover{
     background:#FFFDF8;
     border-color: var(--gold);
     box-shadow: 0 0 0 1px rgba(184,153,104,.35), 0 10px 26px -12px rgba(184,153,104,.55);
   }
+  /* active — only while genuinely pressed: gold fill */
   .btn-msg:active{
     background: var(--gold);
     border-color: var(--gold);
@@ -159,7 +162,7 @@
   .btn-msg.max .chip{ background:linear-gradient(135deg,#0066FF,#7A3CFF); color:#fff }
   .btn-msg.ig .chip{ background:linear-gradient(135deg,#F58529 0%,#DD2A7B 45%,#8134AF 75%,#515BD4 100%); color:#fff }
 
-  /* primary messenger row (dark, on hero) */
+  /* primary messenger row (dark) — kept for the final CTA section only */
   .btn-msg-dark{
     background: var(--ink); color:#FBF5E9; border:1px solid var(--ink);
     box-shadow: var(--shadow-cta);
@@ -563,14 +566,15 @@
   .final-note{font-size:13px;color:var(--ink-mute)}
   @media (max-width:720px){ .final{padding:90px 0} }
 
-  /* desktop (≥1200px): компактнее межсекционные отступы */
+  /* ——— desktop (≥1200px) vertical-rhythm audit ———
+     trims inter-section whitespace ~12–15% (hero→doctor cut deeper),
+     keeps the premium air. Mobile (≤720) & tablet (721–1199) unchanged. */
   @media (min-width:1200px){
-    section{padding:78px 0}
-    .hero{padding:36px 0 52px}
-    .hero-strip{margin-top:44px;padding-top:22px}
-    .hero + section{padding-top:64px}
-    .section-head{margin-bottom:42px}
-    .final{padding:86px 0}
+    section{padding:94px 0}
+    .hero{padding:40px 0 86px}
+    .hero-strip{margin-top:54px}
+    .section-head{margin-bottom:50px}
+    .final{padding:100px 0}
   }
 
   /* ——— footer ——— */
@@ -624,17 +628,6 @@
 </head>
 <body>
 
-<template id="__bundler_thumbnail" data-bg-color="#FAF7F2">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#FAF7F2"/>
-    <circle cx="600" cy="330" r="150" fill="none" stroke="#B89968" stroke-width="10"/>
-    <path d="M520 360c25 45 60 70 80 70s55-25 80-70" fill="none" stroke="#B89968" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="555" cy="305" r="11" fill="#B89968"/>
-    <circle cx="645" cy="305" r="11" fill="#B89968"/>
-    <text x="600" y="600" font-family="Georgia, serif" font-size="64" fill="#211C16" text-anchor="middle">Композитные виниры</text>
-  </svg>
-</template>
-
 <!-- ============ SVG icon sprite ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -657,9 +650,6 @@
     <symbol id="i-balance" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 4v16M4 8h16M6 8l-2.5 5a3 3 0 0 0 5 0zm12 0-2.5 5a3 3 0 0 0 5 0z"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4 3v-3H6a2 2 0 0 1-2-2z"/></symbol>
     <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></symbol>
-    <symbol id="i-feather" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 4c-7 0-12 5-12 12v4h4c7 0 12-5 12-12V4zM4 20 14 10"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
   </defs>
 </svg>
 
@@ -687,9 +677,9 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <span class="eyebrow">Композитные виниры · эстетическая стоматология</span>
-      <h1>Композитные виниры для&nbsp;<span class="accent">естественной</span> и&nbsp;красивой улыбки</h1>
-      <p class="lede">Аккуратно улучшаю форму, оттенок и эстетику зубов — без ощущения «искусственной улыбки». Мягкий и быстрый путь к красивой улыбке — без сложного лечения.</p>
+      <span class="eyebrow">Керамические виниры · авторский подход</span>
+      <h1>Керамические виниры для&nbsp;<span class="accent">естественной</span> и&nbsp;красивой улыбки</h1>
+      <p class="lede">Помогаю бережно изменить форму, цвет и эстетику зубов — без эффекта «искусственной улыбки». Каждая работа подбирается индивидуально, под черты лица и образ.</p>
 
       <p class="hero-cta-label">Отвечаю лично в удобном для вас мессенджере</p>
       <div class="hero-cta">
@@ -715,17 +705,17 @@
         <img src="/images/doctor-hero2.png" alt="Врач-стоматолог Natalia Kolesnik на фоне сертификатов" style="width:100%;height:100%;object-fit:cover;object-position:center 22%" loading="eager" decoding="async">
       </div>
       <div class="badges">
-        <span class="badge"><span class="dot"></span>Естественный результат</span>
-        <span class="badge"><span class="dot"></span>Бережный подход</span>
-        <span class="badge"><span class="dot"></span>Быстрое преображение улыбки</span>
+        <span class="badge"><span class="dot"></span>Керамические виниры</span>
+        <span class="badge"><span class="dot"></span>Эстетическая стоматология</span>
+        <span class="badge"><span class="dot"></span>Индивидуальный подбор формы и цвета</span>
       </div>
     </div>
   </div>
 
   <div class="wrap">
     <div class="hero-strip">
-      <div class="item"><span class="n">1–2 визита</span><span class="l">обычно достаточно для преображения</span></div>
-      <div class="item"><span class="n">Минимум</span><span class="l">вмешательства в ваши зубы</span></div>
+      <div class="item"><span class="n">10+ лет</span><span class="l">практики в эстетической стоматологии</span></div>
+      <div class="item"><span class="n">300+</span><span class="l">установленных виниров</span></div>
       <div class="item"><span class="n">1 к 1</span><span class="l">личное сопровождение на каждом этапе</span></div>
       <div class="item"><span class="n">Без</span><span class="l">«голливудских» решений и шаблонных улыбок</span></div>
     </div>
@@ -837,17 +827,17 @@
 <section class="pain-section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Когда подойдёт</span>
-      <h2>Когда композитные виниры&nbsp;могут&nbsp;подойти</h2>
-      <p class="lede" style="margin-top:18px">Это мягкий способ освежить улыбку — без долгого лечения. Ниже — ситуации, в которых я чаще всего рекомендую композит.</p>
+      <span class="eyebrow">Когда стоит подумать</span>
+      <h2>Когда виниры могут&nbsp;быть&nbsp;решением</h2>
+      <p class="lede" style="margin-top:18px">Если что-то из перечисленного — про вас, можно начать с мягкого разговора. Я не настаиваю на лечении: моя задача — помочь увидеть варианты.</p>
     </div>
     <div class="grid grid-3">
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Не нравится форма передних зубов</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется светлее и свежее улыбку</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Есть небольшие сколы или неровные края</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Заметны промежутки между зубами</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется выглядеть увереннее на фото</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Нужен эстетичный результат без сложного лечения</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Не нравится цвет зубов — кажется тусклым или желтоватым</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Есть мелкие сколы, неровные края или асимметрия</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется аккуратно изменить форму зубов</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Заметны промежутки между передними зубами</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Старые реставрации потемнели или потеряли блеск</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется свободнее улыбаться — на фото и в жизни</p></div>
     </div>
   </div>
 </section>
@@ -856,41 +846,41 @@
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Почему выбирают</span>
-      <h2>Быстрый и деликатный&nbsp;способ улучшить улыбку</h2>
-      <p class="lede" style="margin-top:18px">Композитные виниры позволяют аккуратно скорректировать эстетику улыбки и сохранить естественный внешний вид зубов.</p>
+      <span class="eyebrow">Эстетический результат</span>
+      <h2>Что дают&nbsp;керамические виниры</h2>
+      <p class="lede" style="margin-top:18px">Не «новые зубы», а ваша улыбка — в её лучшей версии. Спокойная, ухоженная, живая.</p>
     </div>
 
     <div class="grid grid-3">
       <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-spark"/></svg></div>
-        <h3>Эстетичное преображение</h3>
-        <p>Аккуратный ухоженный вид — без резких изменений.</p>
-      </div>
-      <div class="card reveal">
         <div class="card-ic"><svg><use href="#i-leaf"/></svg></div>
-        <h3>Естественная форма</h3>
-        <p>Сохраняем характер вашей улыбки, подчёркиваем лучшее.</p>
+        <h3>Естественный цвет</h3>
+        <p>Оттенок подбирается под тон кожи и черты лица — без эффекта «слишком белого».</p>
       </div>
       <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-feather"/></svg></div>
-        <h3>Щадящий подход</h3>
-        <p>Минимум вмешательства в ваши зубы.</p>
+        <div class="card-ic"><svg><use href="#i-smile"/></svg></div>
+        <h3>Ровная форма</h3>
+        <p>Аккуратные края, симметрия, гармоничные пропорции между зубами.</p>
       </div>
       <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-heart"/></svg></div>
-        <h3>Комфортная процедура</h3>
-        <p>Спокойный приём, понятно на каждом этапе.</p>
+        <div class="card-ic"><svg><use href="#i-line"/></svg></div>
+        <h3>Гармоничная линия улыбки</h3>
+        <p>Работаю с линией улыбки целиком, а не с отдельными зубами по очереди.</p>
       </div>
       <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-clock"/></svg></div>
-        <h3>Быстрый результат</h3>
-        <p>Обычно результат виден уже в день приёма.</p>
+        <div class="card-ic"><svg><use href="#i-shield"/></svg></div>
+        <h3>Стойкая эстетика</h3>
+        <p>Керамика не темнеет от кофе, чая или вина — внешний вид сохраняется надолго.</p>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg><use href="#i-palette"/></svg></div>
         <h3>Индивидуальный оттенок</h3>
-        <p>Цвет подбирается под ваш тип внешности.</p>
+        <p>Не каталог из трёх готовых вариантов. Подбор под вас — это часть работы.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic"><svg><use href="#i-spark"/></svg></div>
+        <h3>Ухоженный образ</h3>
+        <p>Спокойная уверенность — без необходимости «прятать» улыбку на фото.</p>
       </div>
     </div>
   </div>
@@ -901,35 +891,35 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Шаг за шагом</span>
-      <h2>Как проходит&nbsp;процедура</h2>
-      <p class="lede" style="margin-top:18px">Иногда всё укладывается в один приём — без ожидания лаборатории и временных конструкций.</p>
+      <h2>Как проходит&nbsp;лечение</h2>
+      <p class="lede" style="margin-top:18px">Бережный, спокойный процесс. На каждом этапе вы понимаете, что происходит и зачем.</p>
     </div>
 
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">1</div>
         <h3>Консультация</h3>
-        <p>Обсуждаем пожелания и смотрим улыбку.</p>
+        <p>Знакомимся, обсуждаем пожелания и ожидания.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">2</div>
-        <h3>Подбор формы и оттенка</h3>
-        <p>Находим вариант, который подходит именно вам.</p>
+        <h3>Фото-анализ</h3>
+        <p>Смотрим улыбку в контексте лица и образа.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">3</div>
-        <h3>Подготовка зубов</h3>
-        <p>Минимальная, без сильной обработки.</p>
+        <h3>Подбор формы и оттенка</h3>
+        <p>Цифровой проект будущей улыбки.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">4</div>
-        <h3>Формирование виниров</h3>
-        <p>Создаю эстетику непосредственно на приёме.</p>
+        <h3>Подготовка и примерка</h3>
+        <p>Временные виниры — вы видите результат заранее.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">5</div>
-        <h3>Полировка и результат</h3>
-        <p>Финальный блеск и живой вид улыбки.</p>
+        <h3>Фиксация</h3>
+        <p>Установка финальных керамических виниров.</p>
       </div>
     </div>
 
@@ -953,30 +943,30 @@
     <div class="reveal">
       <span class="eyebrow">Подход</span>
       <div style="height:18px"></div>
-      <p class="trust-quote">Эстетика — это внимание к&nbsp;<span class="it">деталям</span> и характеру улыбки.</p>
-      <p class="lede">Для меня важно не просто изменить зубы, а сделать улыбку естественной, аккуратной и комфортной именно для вас.</p>
+      <p class="trust-quote">Виниры — это не просто белые зубы, а работа с&nbsp;<span class="it">лицом</span>, улыбкой и&nbsp;пропорциями.</p>
+      <p class="lede">Я подбираю форму и оттенок так, чтобы улыбка выглядела естественно и подходила именно вам: чертам лица, возрасту, тону кожи и общему образу.</p>
     </div>
 
     <div class="trust-cards">
       <div class="trust-card reveal">
         <div class="card-ic"><svg><use href="#i-person"/></svg></div>
         <h3>Индивидуальный подход</h3>
-        <p>Решение подбирается под вашу улыбку.</p>
-      </div>
-      <div class="trust-card reveal">
-        <div class="card-ic"><svg><use href="#i-feather"/></svg></div>
-        <h3>Деликатная работа</h3>
-        <p>Минимальное вмешательство в ваши зубы.</p>
+        <p>Никаких шаблонов. Работаем именно с вашей улыбкой.</p>
       </div>
       <div class="trust-card reveal">
         <div class="card-ic"><svg><use href="#i-balance"/></svg></div>
-        <h3>Внимание к эстетике</h3>
-        <p>Смотрю на улыбку в гармонии с лицом.</p>
+        <h3>Эстетика без «перебора»</h3>
+        <p>Естественные пропорции — без ощущения «накладных» зубов.</p>
       </div>
       <div class="trust-card reveal">
         <div class="card-ic"><svg><use href="#i-chat"/></svg></div>
-        <h3>Спокойная коммуникация</h3>
-        <p>Без давления и навязывания услуг.</p>
+        <h3>Аккуратная коммуникация</h3>
+        <p>Спокойный диалог, без давления и навязывания услуг.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="card-ic"><svg><use href="#i-list"/></svg></div>
+        <h3>Подробные объяснения</h3>
+        <p>На каждом этапе — что, как и зачем мы делаем.</p>
       </div>
     </div>
   </div>
@@ -1003,7 +993,7 @@
         <div class="case-body">
           <div class="meta">Кейс 01</div>
           <h3>Коррекция формы и оттенка</h3>
-          <p>Композитные виниры на верхний ряд — живой, естественный результат.</p>
+          <p>Керамические виниры на верхний ряд. Без агрессивной обточки.</p>
         </div>
       </article>
 
@@ -1015,8 +1005,8 @@
         </div>
         <div class="case-body">
           <div class="meta">Кейс 02</div>
-          <h3>Аккуратный композит</h3>
-          <p>Сохранили индивидуальность улыбки — без резких перемен.</p>
+          <h3>Закрытие промежутков</h3>
+          <p>Сохранили индивидуальность улыбки — характерные мелкие детали.</p>
         </div>
       </article>
 
@@ -1028,8 +1018,8 @@
         </div>
         <div class="case-body">
           <div class="meta">Кейс 03</div>
-          <h3>Свежая ухоженная улыбка</h3>
-          <p>Композит в естественном оттенке, без эффекта «искусственности».</p>
+          <h3>Замена старых реставраций</h3>
+          <p>Новая керамика в естественном оттенке, без эффекта «искусственности».</p>
         </div>
       </article>
     </div>
@@ -1046,16 +1036,12 @@
 
     <div class="faq">
       <div class="faq-item">
-        <button class="faq-q">Чем композитные виниры отличаются от керамических?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Композитные делаются прямо в кабинете и обычно быстрее по времени — это мягкий вход в эстетику. Керамика делается в лаборатории и дольше сохраняет внешний вид. Что подойдёт вам — обсудим лично.</div></div>
+        <button class="faq-q">Больно ли устанавливать виниры?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Процедура проходит под местной анестезией — некомфортных ощущений нет. После установки возможна лёгкая чувствительность первые несколько дней — это нормально и быстро проходит.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Больно ли делать процедуру?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Обычно нет — обработка минимальная, при необходимости используется местная анестезия. Сама процедура спокойная и комфортная.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Сколько служат композитные виниры?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">При аккуратном обращении и регулярной гигиене композит сохраняется в хорошем виде несколько лет. Раз в пару лет можно освежить полировку и продлить хороший вид.</div></div>
+        <button class="faq-q">Сколько служат керамические виниры?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">При аккуратном обращении и регулярной гигиене керамика остаётся в хорошем виде многие годы. Конкретные сроки зависят от ваших привычек и регулярных профилактических визитов.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Можно ли подобрать естественный цвет?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
@@ -1063,7 +1049,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Нужно ли сильно обтачивать зубы?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Нет. Композитные виниры предполагают минимальное вмешательство в зубы — это одно из их главных преимуществ.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Я работаю максимально бережно. В большинстве случаев обработка минимальная — ровно настолько, насколько это нужно для конкретной клинической ситуации.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Подойдут ли виниры именно мне?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
@@ -1081,7 +1067,7 @@
 <section class="final" id="final">
   <div class="wrap final-inner reveal">
     <span class="eyebrow" style="justify-content:center">Связь со мной</span>
-    <h2 style="margin-top:20px">Хотите понять, подойдут ли вам композитные виниры?</h2>
+    <h2 style="margin-top:20px">Хотите понять, подойдут ли вам виниры?</h2>
     <p class="lede">Напишите мне в удобный мессенджер. Можно отправить фото улыбки — подскажу, с чего лучше начать. Без обязательств и без записи на приём «вслепую».</p>
 
     <div class="final-cta">
@@ -1113,9 +1099,9 @@
       </div>
     </div>
     <div class="foot-links">
-      <a href="Виниры - Лендинг.html">Керамические виниры</a>
       <a href="Кариес - Лендинг.html">Кариес</a>
       <a href="Имплантация - Лендинг.html">Имплантация</a>
+      <a href="Композитные виниры - Лендинг.html">Композитные виниры</a>
       <a href="#" data-msg="telegram">Telegram</a>
       <a href="#" data-msg="max">Max</a>
       <a href="#" data-msg="instagram">Instagram</a>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Композитные виниры — эстетичная улыбка без сложного лечения</title>
+<title>Имплантация зубов — естественный результат с комфортом</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 
 <style>
   :root{
-    /* palette — warm milk, sand, taupe */
     --bg:           #FAF7F2;
     --bg-deeper:    #F2EBDF;
     --paper:        #FFFFFF;
@@ -27,11 +26,9 @@
     --hairline:     #E6DDCC;
     --hairline-soft:#EFE7D8;
 
-    /* type */
     --serif: "Instrument Serif", "Cormorant Garamond", ui-serif, Georgia, serif;
     --sans:  "Geist", "Helvetica Neue", system-ui, -apple-system, Arial, sans-serif;
 
-    /* shadows */
     --shadow-soft: 0 1px 2px rgba(60,40,20,.04), 0 14px 40px -18px rgba(80,55,25,.18);
     --shadow-card: 0 1px 2px rgba(60,40,20,.04), 0 22px 60px -28px rgba(80,55,25,.22);
     --shadow-cta:  0 1px 2px rgba(60,40,20,.06), 0 18px 36px -14px rgba(120,85,30,.28);
@@ -44,11 +41,9 @@
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
-  /* layout */
   .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
   @media (max-width:720px){ .wrap{padding:0 20px} }
 
-  /* type system */
   .eyebrow{
     font-family:var(--sans);
     font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
@@ -63,9 +58,8 @@
   h2{font-size:clamp(32px, 3.8vw, 56px); line-height:1.05}
   h3{font-size:clamp(22px, 2vw, 28px); line-height:1.15}
   .lede{font-size:clamp(17px, 1.25vw, 20px); color:var(--ink-soft); line-height:1.55; max-width:54ch; text-wrap:pretty}
-  em.it{font-style:italic;color:var(--gold)}
 
-  /* ——— top bar ——— */
+  /* top bar */
   .topbar{
     position:sticky; top:0; z-index:40;
     backdrop-filter: blur(14px);
@@ -91,47 +85,33 @@
   .brand-name small{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px}
   .top-cta{display:flex;align-items:center;gap:10px}
   .top-cta .btn{padding:10px 18px;font-size:14px}
+  .top-nav{display:flex;gap:24px;font-size:14px;color:var(--ink-soft)}
+  .top-nav a:hover{color:var(--ink)}
+  @media (max-width:980px){ .top-nav{display:none} }
   @media (max-width:720px){
     .topbar-inner{height:60px}
     .top-cta .btn-secondary{display:none}
     .brand-name small{display:none}
   }
 
-  /* ——— buttons ——— */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
     padding:16px 26px;
     border-radius:999px;
     font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:-.005em;
-    transition: transform .18s ease, box-shadow .25s ease, background .2s ease, color .2s ease;
+    transition: transform .18s ease, box-shadow .25s ease, background .2s ease, color .2s ease, border-color .2s ease;
     white-space:nowrap;
     will-change: transform;
   }
   .btn:hover{transform:translateY(-1px)}
   .btn:active{transform:translateY(0)}
   .btn .ic{width:18px;height:18px;flex:none}
-  .btn-primary{
-    background: var(--paper);
-    color: var(--ink);
-    box-shadow: var(--shadow-soft);
-    border:1px solid var(--hairline);
-  }
+  .btn-primary{ background: var(--paper); color: var(--ink); box-shadow: var(--shadow-soft); border:1px solid var(--hairline); }
   .btn-primary:hover{background:#FFFDF8}
-  .btn-secondary{
-    background: var(--paper);
-    color: var(--ink);
-    box-shadow: var(--shadow-soft);
-    border:1px solid var(--hairline);
-  }
+  .btn-secondary{ background: var(--paper); color: var(--ink); box-shadow: var(--shadow-soft); border:1px solid var(--hairline); }
   .btn-secondary:hover{background:#FFFDF8}
-  .btn-ghost{
-    background: transparent; color: var(--ink);
-    border:1px solid var(--hairline);
-  }
-  .btn-ghost:hover{background:rgba(0,0,0,.025)}
   .btn-lg{padding:20px 30px;font-size:16px}
 
-  /* messenger buttons — equal weight, light; gold hover */
   .btn-msg{
     background: var(--paper); color: var(--ink);
     border:1px solid var(--hairline);
@@ -159,14 +139,12 @@
   .btn-msg.max .chip{ background:linear-gradient(135deg,#0066FF,#7A3CFF); color:#fff }
   .btn-msg.ig .chip{ background:linear-gradient(135deg,#F58529 0%,#DD2A7B 45%,#8134AF 75%,#515BD4 100%); color:#fff }
 
-  /* primary messenger row (dark, on hero) */
   .btn-msg-dark{
     background: var(--ink); color:#FBF5E9; border:1px solid var(--ink);
     box-shadow: var(--shadow-cta);
   }
   .btn-msg-dark:hover{background:#34291f}
 
-  /* ——— sections ——— */
   section{padding:120px 0;position:relative}
   @media (max-width:720px){ section{padding:80px 0} }
   .section-head{margin-bottom:64px;max-width:760px}
@@ -375,9 +353,10 @@
   /* ——— cards ——— */
   .grid{display:grid;gap:18px}
   .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
   .grid-2{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:980px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:620px){ .grid-3, .grid-2{grid-template-columns:1fr} }
+  @media (max-width:980px){ .grid-3, .grid-4{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:620px){ .grid-3, .grid-4, .grid-2{grid-template-columns:1fr} }
 
   .card{
     background:var(--paper);
@@ -387,10 +366,6 @@
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
   .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);border-color:var(--hairline)}
-  .card .num{
-    font-family:var(--serif); font-size:20px; color:var(--gold);
-    display:block; margin-bottom:18px; letter-spacing:.04em;
-  }
   .card h3{margin-bottom:10px;font-size:22px}
   .card p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55}
 
@@ -403,27 +378,57 @@
   }
   .card-ic svg{width:24px;height:24px}
 
-  /* ——— pain points (subtle, no fear) ——— */
+  /* Pain */
   .pain-section{background:var(--bg-deeper)}
   .pain-card{
     background:var(--paper);
     border:1px solid var(--hairline-soft);
     border-radius:22px;
-    padding:26px 28px;
-    display:flex;align-items:flex-start;gap:18px;
+    padding:24px 26px;
+    display:flex;align-items:flex-start;gap:16px;
     transition: transform .2s ease, box-shadow .2s ease;
   }
   .pain-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
   .pain-bullet{
-    width:36px;height:36px;border-radius:50%;
+    width:34px;height:34px;border-radius:50%;
     background:var(--sand-soft); color:var(--gold);
     display:flex;align-items:center;justify-content:center;flex:none;
     font-family:var(--serif); font-size:18px;
   }
-  .pain-card p{margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
+  .pain-card p{margin:0;font-size:15px;line-height:1.5;color:var(--ink)}
 
-  /* ——— process ——— */
-  .process{position:relative}
+  /* Fear / understanding emotional block */
+  .fear-grid{
+    display:grid;grid-template-columns: 1fr 1fr; gap:80px;align-items:center;
+  }
+  @media (max-width:980px){ .fear-grid{grid-template-columns:1fr;gap:48px} }
+  .fear-quote{
+    font-family:var(--serif); font-size:clamp(26px,2.4vw,38px); line-height:1.25;
+    letter-spacing:-.01em; color:var(--ink);
+    text-wrap:balance;
+  }
+  .fear-quote .it{font-style:italic;color:var(--gold)}
+  .fear-quote p{margin:0 0 22px}
+  .fear-quote p:last-child{margin-bottom:0}
+  .fear-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fear-card{
+    background:var(--paper);
+    border:1px solid var(--hairline-soft);
+    border-radius:18px;
+    padding:20px 22px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .fear-card .ic-wrap{
+    width:38px;height:38px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    background: var(--sand-soft); color: var(--gold); flex:none;
+  }
+  .fear-card .ic-wrap svg{width:18px;height:18px}
+  .fear-card p{margin:0;font-size:15px;color:var(--ink);line-height:1.4}
+  @media (max-width:520px){ .fear-cards{grid-template-columns:1fr} }
+
+  /* Process */
+  .process{position:relative;background:var(--bg-deeper)}
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative;margin-bottom:56px}
   .steps::before{
     content:""; position:absolute; left:5%; right:5%; top:38px;
@@ -448,17 +453,40 @@
   }
   @media (max-width:480px){ .steps{grid-template-columns:1fr} }
 
-  /* ——— trust block ——— */
+  /* Aesthetics block (split) */
+  .aesthetics-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:center;
+  }
+  @media (max-width:980px){ .aesthetics-grid{grid-template-columns:1fr; gap:48px} }
+  .ae-img{
+    aspect-ratio: 5/6;
+    border-radius: 32px;
+    overflow:hidden;
+    background: linear-gradient(160deg, var(--sand-soft) 0%, var(--sand) 100%);
+    box-shadow: var(--shadow-card);
+    position:relative;
+  }
+  .ae-img image-slot{width:100%;height:100%;--is-bg:transparent}
+  .ae-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+  .ae-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+  @media (max-width:520px){ .ae-cards{grid-template-columns:1fr} }
+  .ae-cards .card{padding:24px 22px}
+  .ae-cards .card-ic{width:38px;height:38px;border-radius:11px;margin-bottom:16px}
+  .ae-cards .card-ic svg{width:20px;height:20px}
+  .ae-cards .card h3{font-size:18px}
+  .ae-cards .card p{font-size:14px}
+
+  /* Trust */
   .trust{background:var(--bg-deeper)}
   .trust-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
   @media (max-width:980px){ .trust-grid{grid-template-columns:1fr;gap:48px} }
   .trust-quote{
-    font-family:var(--serif); font-size:clamp(28px,2.6vw,42px); line-height:1.15;
+    font-family:var(--serif); font-size:clamp(28px,2.6vw,40px); line-height:1.18;
     letter-spacing:-.015em; color:var(--ink);
     text-wrap:balance;
   }
   .trust-quote .it{font-style:italic;color:var(--gold)}
-  .trust p.lede{margin-top:28px}
+  .trust p.lede{margin-top:28px;white-space:pre-line}
 
   .trust-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .trust-card{
@@ -473,7 +501,7 @@
   .trust-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.5}
   @media (max-width:520px){ .trust-cards{grid-template-columns:1fr} }
 
-  /* ——— cases / before-after ——— */
+  /* Cases */
   .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media (max-width:880px){ .cases-grid{grid-template-columns:1fr} }
   .case{
@@ -504,11 +532,9 @@
   .case-body h3{font-size:20px;margin:0 0 6px}
   .case-body p{margin:0;color:var(--ink-soft);font-size:14px;line-height:1.5}
 
-  /* ——— FAQ ——— */
+  /* FAQ */
   .faq{max-width:880px;margin:0 auto}
-  .faq-item{
-    border-bottom:1px solid var(--hairline-soft);
-  }
+  .faq-item{ border-bottom:1px solid var(--hairline-soft); }
   .faq-item:first-child{border-top:1px solid var(--hairline-soft)}
   .faq-q{
     width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
@@ -526,12 +552,10 @@
   }
   .faq-toggle svg{width:14px;height:14px}
   .faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--sand-soft);border-color:var(--sand)}
-  .faq-a{
-    max-height:0;overflow:hidden;transition: max-height .35s ease;
-  }
+  .faq-a{ max-height:0;overflow:hidden;transition: max-height .35s ease; }
   .faq-a-inner{padding:0 56px 28px 0; color:var(--ink-soft); font-size:16px; line-height:1.6; max-width:64ch}
 
-  /* ——— mid CTA block ——— */
+  /* mid CTA */
   .mid-cta{
     margin:0 auto; max-width:920px;
     background: var(--paper);
@@ -545,7 +569,7 @@
   .mid-cta p{margin:0;color:var(--ink-mute);font-size:15px}
   @media (max-width:720px){ .mid-cta{flex-direction:column;align-items:flex-start;padding:32px 26px} }
 
-  /* ——— final CTA ——— */
+  /* Final CTA */
   .final{
     background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deeper) 100%);
     padding:140px 0;
@@ -573,7 +597,7 @@
     .final{padding:86px 0}
   }
 
-  /* ——— footer ——— */
+  /* Footer */
   footer{padding:48px 0 120px;border-top:1px solid var(--hairline-soft);background:var(--bg)}
   .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .foot small{font-size:13px;color:var(--ink-mute)}
@@ -581,7 +605,7 @@
   .foot-links a:hover{color:var(--ink)}
   @media (max-width:720px){ footer{padding-bottom:140px} }
 
-  /* ——— sticky mobile CTA bar ——— */
+  /* Mobile sticky CTA bar */
   .mobile-bar{
     position:fixed; left:12px;right:12px;bottom:12px;
     z-index:50;
@@ -609,11 +633,9 @@
   .mobile-bar .ig .chip{background:linear-gradient(135deg,#F58529,#DD2A7B 55%,#8134AF)}
   @media (max-width:720px){ .mobile-bar{display:grid} }
 
-  /* utility */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease, transform .8s ease}
   .reveal.in{opacity:1;transform:none}
 
-  /* image-slot tweaks (component fallback styling) */
   image-slot{
     --is-bg: var(--sand-soft);
     --is-border: 1px dashed rgba(120,85,30,.25);
@@ -624,18 +646,6 @@
 </head>
 <body>
 
-<template id="__bundler_thumbnail" data-bg-color="#FAF7F2">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#FAF7F2"/>
-    <circle cx="600" cy="330" r="150" fill="none" stroke="#B89968" stroke-width="10"/>
-    <path d="M520 360c25 45 60 70 80 70s55-25 80-70" fill="none" stroke="#B89968" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="555" cy="305" r="11" fill="#B89968"/>
-    <circle cx="645" cy="305" r="11" fill="#B89968"/>
-    <text x="600" y="600" font-family="Georgia, serif" font-size="64" fill="#211C16" text-anchor="middle">Композитные виниры</text>
-  </svg>
-</template>
-
-<!-- ============ SVG icon sprite ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.95 4.34 18.7 19.8c-.24 1.1-.9 1.37-1.83.85l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16 9.4-8.5c.42-.36-.09-.56-.65-.2L6.84 12.6 1.84 11c-1.08-.34-1.1-1.08.23-1.6L20.55 2.6c.9-.34 1.7.2 1.4 1.74z"/></symbol>
@@ -644,26 +654,22 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
 
-    <!-- result icons -->
-    <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 4S9 4 6 8s-3 11-3 11 7 0 11-3 6-12 6-12zM4 20 14 10"/></symbol>
-    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 14c1 1.4 2.4 2.2 4 2.2s3-.8 4-2.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></symbol>
-    <symbol id="i-line" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M3 14c3-4 6-4 9 0s6 4 9 0"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
-    <symbol id="i-palette" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.6 1.5-1.4 0-.8-.6-1-.6-1.7 0-.7.6-1.2 1.4-1.2H16a5 5 0 0 0 5-5c0-4.7-4-8.7-9-8.7z"/><circle cx="7.5" cy="11" r="1.1" fill="currentColor"/><circle cx="11" cy="7.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="17.5" cy="13" r="1.1" fill="currentColor"/></symbol>
-    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path fill="currentColor" d="m18.5 16 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7z"/></symbol>
-
-    <!-- trust icons -->
-    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 21c1.2-4 4.5-6 8-6s6.8 2 8 6"/></symbol>
-    <symbol id="i-balance" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 4v16M4 8h16M6 8l-2.5 5a3 3 0 0 0 5 0zm12 0-2.5 5a3 3 0 0 0 5 0z"/></symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4 3v-3H6a2 2 0 0 1-2-2z"/></symbol>
-    <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></symbol>
     <symbol id="i-feather" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 4c-7 0-12 5-12 12v4h4c7 0 12-5 12-12V4zM4 20 14 10"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3s-7 8-7 12a7 7 0 0 0 14 0c0-4-7-12-7-12z"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4 3v-3H6a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 4S9 4 6 8s-3 11-3 11 7 0 11-3 6-12 6-12zM4 20 14 10"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.6 1.5-1.4 0-.8-.6-1-.6-1.7 0-.7.6-1.2 1.4-1.2H16a5 5 0 0 0 5-5c0-4.7-4-8.7-9-8.7z"/><circle cx="7.5" cy="11" r="1.1" fill="currentColor"/><circle cx="11" cy="7.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="17.5" cy="13" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path fill="currentColor" d="m18.5 16 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7z"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 21c1.2-4 4.5-6 8-6s6.8 2 8 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   </defs>
 </svg>
 
-<!-- ============ Top bar ============ -->
+<!-- Top bar -->
 <header class="topbar" id="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">
@@ -673,41 +679,46 @@
         <small>Эстетическая стоматология</small>
       </div>
     </div>
+    <nav class="top-nav">
+      <a href="#pain">О потере зуба</a>
+      <a href="#process">Как проходит</a>
+      <a href="#aesthetics">Эстетика</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
     <div class="top-cta">
-      <a class="btn btn-secondary" href="#process">Как проходит</a>
       <a class="btn btn-primary" href="#final">
-        Записаться
+        Написать врачу
         <svg class="ic"><use href="#i-arrow"/></svg>
       </a>
     </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <span class="eyebrow">Композитные виниры · эстетическая стоматология</span>
-      <h1>Композитные виниры для&nbsp;<span class="accent">естественной</span> и&nbsp;красивой улыбки</h1>
-      <p class="lede">Аккуратно улучшаю форму, оттенок и эстетику зубов — без ощущения «искусственной улыбки». Мягкий и быстрый путь к красивой улыбке — без сложного лечения.</p>
+      <span class="eyebrow">Имплантация · авторский подход</span>
+      <h1>Имплантация зубов с&nbsp;<span class="accent">комфортом</span> и&nbsp;естественным результатом</h1>
+      <p class="lede">Помогаю восстановить улыбку аккуратно, спокойно и без ощущения «искусственных зубов». На каждом этапе вы понимаете, что и зачем происходит.</p>
 
       <p class="hero-cta-label">Отвечаю лично в удобном для вас мессенджере</p>
       <div class="hero-cta">
         <a class="btn btn-msg btn-lg tg" href="#" data-msg="telegram">
-          <span class="chip"><svg class="ic" style="width:16px;height:16px"><use href="#i-tg"/></svg></span>
+          <span class="chip"><svg style="width:16px;height:16px"><use href="#i-tg"/></svg></span>
           Написать в Telegram
         </a>
         <a class="btn btn-msg btn-lg max" href="#" data-msg="max">
-          <span class="chip"><svg class="ic" style="width:18px;height:18px"><use href="#i-max"/></svg></span>
+          <span class="chip"><svg style="width:18px;height:18px"><use href="#i-max"/></svg></span>
           Написать в Max
         </a>
         <a class="btn btn-msg btn-lg ig" href="#" data-msg="instagram">
-          <span class="chip"><svg class="ic" style="width:16px;height:16px"><use href="#i-ig"/></svg></span>
+          <span class="chip"><svg style="width:16px;height:16px"><use href="#i-ig"/></svg></span>
           Instagram
         </a>
       </div>
 
-      <p class="hero-note">Отвечу лично. Можно прислать фото улыбки и получить первичную консультацию — бесплатно и без обязательств.</p>
+      <p class="hero-note">Можно отправить фото или задать вопрос лично — отвечу в удобном мессенджере, без записи на приём «вслепую».</p>
     </div>
 
     <div class="hero-portrait reveal">
@@ -715,19 +726,20 @@
         <img src="/images/doctor-hero2.png" alt="Врач-стоматолог Natalia Kolesnik на фоне сертификатов" style="width:100%;height:100%;object-fit:cover;object-position:center 22%" loading="eager" decoding="async">
       </div>
       <div class="badges">
-        <span class="badge"><span class="dot"></span>Естественный результат</span>
+        <span class="badge"><span class="dot"></span>Современные импланты</span>
         <span class="badge"><span class="dot"></span>Бережный подход</span>
-        <span class="badge"><span class="dot"></span>Быстрое преображение улыбки</span>
+        <span class="badge"><span class="dot"></span>Естественная эстетика</span>
+        <span class="badge"><span class="dot"></span>Комфортное восстановление</span>
       </div>
     </div>
   </div>
 
   <div class="wrap">
     <div class="hero-strip">
-      <div class="item"><span class="n">1–2 визита</span><span class="l">обычно достаточно для преображения</span></div>
-      <div class="item"><span class="n">Минимум</span><span class="l">вмешательства в ваши зубы</span></div>
-      <div class="item"><span class="n">1 к 1</span><span class="l">личное сопровождение на каждом этапе</span></div>
-      <div class="item"><span class="n">Без</span><span class="l">«голливудских» решений и шаблонных улыбок</span></div>
+      <div class="item"><span class="n">10+ лет</span><span class="l">практики в имплантации и эстетике</span></div>
+      <div class="item"><span class="n">Комфорт</span><span class="l">современная анестезия, спокойный темп приёма</span></div>
+      <div class="item"><span class="n">Поэтапно</span><span class="l">план, имплант, восстановление, коронка</span></div>
+      <div class="item"><span class="n">Эстетика</span><span class="l">результат, который выглядит естественно</span></div>
     </div>
   </div>
 </section>
@@ -833,110 +845,107 @@
   </div>
 </section>
 
-<!-- ============ PAIN POINTS ============ -->
-<section class="pain-section">
+<!-- PAIN -->
+<section class="pain-section" id="pain">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Когда подойдёт</span>
-      <h2>Когда композитные виниры&nbsp;могут&nbsp;подойти</h2>
-      <p class="lede" style="margin-top:18px">Это мягкий способ освежить улыбку — без долгого лечения. Ниже — ситуации, в которых я чаще всего рекомендую композит.</p>
+      <span class="eyebrow">Когда важно подумать</span>
+      <h2>Потеря зуба&nbsp;— это не только про&nbsp;эстетику</h2>
+      <p class="lede" style="margin-top:18px">Даже один отсутствующий зуб меняет многое — от привычки жевать до уверенности в общении. Если что-то из этого про вас — можно просто написать и обсудить.</p>
     </div>
     <div class="grid grid-3">
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Не нравится форма передних зубов</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется светлее и свежее улыбку</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Есть небольшие сколы или неровные края</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Заметны промежутки между зубами</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Хочется выглядеть увереннее на фото</p></div>
-      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Нужен эстетичный результат без сложного лечения</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Неудобно улыбаться и общаться</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Сложно жевать на одной стороне</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Появилась неуверенность в себе</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Изменилось ощущение комфорта во рту</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Не хочется фотографироваться</p></div>
+      <div class="pain-card reveal"><span class="pain-bullet">·</span><p>Есть страх сложного лечения</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ RESULT / BENEFITS ============ -->
+<!-- FEAR / understanding -->
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Почему выбирают</span>
-      <h2>Быстрый и деликатный&nbsp;способ улучшить улыбку</h2>
-      <p class="lede" style="margin-top:18px">Композитные виниры позволяют аккуратно скорректировать эстетику улыбки и сохранить естественный внешний вид зубов.</p>
+      <span class="eyebrow">Я понимаю</span>
+      <h2>Почему люди боятся&nbsp;имплантации</h2>
     </div>
 
-    <div class="grid grid-3">
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-spark"/></svg></div>
-        <h3>Эстетичное преображение</h3>
-        <p>Аккуратный ухоженный вид — без резких изменений.</p>
+    <div class="fear-grid">
+      <div class="fear-quote reveal">
+        <p>Чаще всего пациенты боятся не самой имплантации, а <span class="it">неизвестности</span>:</p>
+        <p style="font-size:.7em;color:var(--ink-soft);line-height:1.5;font-family:var(--sans);font-style:normal">будет ли больно. сложно ли проходит восстановление. как всё будет выглядеть. насколько это вообще страшно.</p>
+        <p>Поэтому для меня важно, чтобы вы чувствовали <span class="it">спокойствие</span> и понимали каждый этап.</p>
       </div>
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-leaf"/></svg></div>
-        <h3>Естественная форма</h3>
-        <p>Сохраняем характер вашей улыбки, подчёркиваем лучшее.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-feather"/></svg></div>
-        <h3>Щадящий подход</h3>
-        <p>Минимум вмешательства в ваши зубы.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-heart"/></svg></div>
-        <h3>Комфортная процедура</h3>
-        <p>Спокойный приём, понятно на каждом этапе.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-clock"/></svg></div>
-        <h3>Быстрый результат</h3>
-        <p>Обычно результат виден уже в день приёма.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-ic"><svg><use href="#i-palette"/></svg></div>
-        <h3>Индивидуальный оттенок</h3>
-        <p>Цвет подбирается под ваш тип внешности.</p>
+
+      <div class="fear-cards reveal">
+        <div class="fear-card">
+          <span class="ic-wrap"><svg><use href="#i-chat"/></svg></span>
+          <p>Всё объясняем заранее</p>
+        </div>
+        <div class="fear-card">
+          <span class="ic-wrap"><svg><use href="#i-drop"/></svg></span>
+          <p>Современная анестезия</p>
+        </div>
+        <div class="fear-card">
+          <span class="ic-wrap"><svg><use href="#i-feather"/></svg></span>
+          <p>Деликатный подход</p>
+        </div>
+        <div class="fear-card">
+          <span class="ic-wrap"><svg><use href="#i-heart"/></svg></span>
+          <p>Комфортное восстановление</p>
+        </div>
+        <div class="fear-card" style="grid-column:1 / -1">
+          <span class="ic-wrap"><svg><use href="#i-clock"/></svg></span>
+          <p>Спокойная атмосфера — без спешки и давления</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="process" id="process" style="background:var(--bg-deeper)">
+<!-- PROCESS -->
+<section class="process" id="process">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Шаг за шагом</span>
-      <h2>Как проходит&nbsp;процедура</h2>
-      <p class="lede" style="margin-top:18px">Иногда всё укладывается в один приём — без ожидания лаборатории и временных конструкций.</p>
+      <h2>Как проходит&nbsp;имплантация</h2>
+      <p class="lede" style="margin-top:18px">Аккуратный, поэтапный процесс. Вы знаете заранее, что и когда будет происходить — без сюрпризов.</p>
     </div>
 
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <h3>Консультация</h3>
-        <p>Обсуждаем пожелания и смотрим улыбку.</p>
+        <h3>Консультация и диагностика</h3>
+        <p>Обсуждаем ситуацию и пожелания.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">2</div>
-        <h3>Подбор формы и оттенка</h3>
-        <p>Находим вариант, который подходит именно вам.</p>
+        <h3>План лечения</h3>
+        <p>Понятный план — без сюрпризов.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">3</div>
-        <h3>Подготовка зубов</h3>
-        <p>Минимальная, без сильной обработки.</p>
+        <h3>Установка импланта</h3>
+        <p>Под современной анестезией.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">4</div>
-        <h3>Формирование виниров</h3>
-        <p>Создаю эстетику непосредственно на приёме.</p>
+        <h3>Восстановление</h3>
+        <p>Спокойный период приживления.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">5</div>
-        <h3>Полировка и результат</h3>
-        <p>Финальный блеск и живой вид улыбки.</p>
+        <h3>Установка коронки</h3>
+        <p>Финальная эстетика и комфорт.</p>
       </div>
     </div>
 
     <div class="mid-cta reveal">
       <div>
-        <h3>Хочу узнать, подойдут&nbsp;ли&nbsp;мне виниры</h3>
-        <p>Напишите в любом мессенджере — отвечу лично, без автоответов.</p>
+        <h3>Хочу узнать, подойдёт&nbsp;ли&nbsp;мне имплантация</h3>
+        <p>Напишите в любом мессенджере — отвечу лично.</p>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn btn-msg tg" href="#" data-msg="telegram"><span class="chip"><svg style="width:16px;height:16px"><use href="#i-tg"/></svg></span>Telegram</a>
@@ -947,142 +956,180 @@
   </div>
 </section>
 
-<!-- ============ TRUST ============ -->
+<!-- AESTHETICS -->
+<section id="aesthetics">
+  <div class="wrap">
+    <div class="aesthetics-grid">
+      <div class="reveal">
+        <div class="ae-img">
+          <img src="/images/aesthetics.webp" alt="Врач в кабинете изучает профессиональную литературу" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">Естественный результат</span>
+        <h2 style="margin-top:18px">Имплантация сегодня&nbsp;— это про <span style="font-style:italic;color:var(--gold)">естественную</span> улыбку</h2>
+        <p class="lede" style="margin-top:22px">Важно не просто восстановить зуб, а сделать так, чтобы улыбка выглядела гармонично и естественно — без ощущения «чужого».</p>
+
+        <div class="ae-cards">
+          <div class="card">
+            <div class="card-ic"><svg><use href="#i-leaf"/></svg></div>
+            <h3>Естественная форма</h3>
+            <p>Коронка повторяет форму ваших зубов.</p>
+          </div>
+          <div class="card">
+            <div class="card-ic"><svg><use href="#i-palette"/></svg></div>
+            <h3>Подбор оттенка</h3>
+            <p>Цвет — как у соседних зубов, без контраста.</p>
+          </div>
+          <div class="card">
+            <div class="card-ic"><svg><use href="#i-shield"/></svg></div>
+            <h3>Комфорт при жевании</h3>
+            <p>Имплант ощущается как свой зуб.</p>
+          </div>
+          <div class="card">
+            <div class="card-ic"><svg><use href="#i-spark"/></svg></div>
+            <h3>Ощущение уверенности</h3>
+            <p>Можно спокойно улыбаться и фотографироваться.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
 <section class="trust">
   <div class="wrap trust-grid">
     <div class="reveal">
       <span class="eyebrow">Подход</span>
       <div style="height:18px"></div>
-      <p class="trust-quote">Эстетика — это внимание к&nbsp;<span class="it">деталям</span> и характеру улыбки.</p>
-      <p class="lede">Для меня важно не просто изменить зубы, а сделать улыбку естественной, аккуратной и комфортной именно для вас.</p>
+      <p class="trust-quote">На имплантации особенно важно чувствовать&nbsp;<span class="it">доверие</span>.</p>
+      <p class="lede">Я стараюсь, чтобы вы чувствовали себя спокойно на каждом этапе: без спешки, без давления и&nbsp;с понятным объяснением всех процедур.</p>
     </div>
 
     <div class="trust-cards">
       <div class="trust-card reveal">
-        <div class="card-ic"><svg><use href="#i-person"/></svg></div>
-        <h3>Индивидуальный подход</h3>
-        <p>Решение подбирается под вашу улыбку.</p>
-      </div>
-      <div class="trust-card reveal">
-        <div class="card-ic"><svg><use href="#i-feather"/></svg></div>
-        <h3>Деликатная работа</h3>
-        <p>Минимальное вмешательство в ваши зубы.</p>
-      </div>
-      <div class="trust-card reveal">
-        <div class="card-ic"><svg><use href="#i-balance"/></svg></div>
-        <h3>Внимание к эстетике</h3>
-        <p>Смотрю на улыбку в гармонии с лицом.</p>
+        <div class="card-ic"><svg><use href="#i-eye"/></svg></div>
+        <h3>Внимательный подход</h3>
+        <p>Смотрю на ситуацию целиком, а не только на один зуб.</p>
       </div>
       <div class="trust-card reveal">
         <div class="card-ic"><svg><use href="#i-chat"/></svg></div>
         <h3>Спокойная коммуникация</h3>
-        <p>Без давления и навязывания услуг.</p>
+        <p>Простыми словами, без медицинских терминов.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="card-ic"><svg><use href="#i-list"/></svg></div>
+        <h3>Подробное объяснение</h3>
+        <p>На каждом этапе — что, как и зачем мы делаем.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="card-ic"><svg><use href="#i-person"/></svg></div>
+        <h3>Индивидуальный план</h3>
+        <p>Решение подбирается под вашу ситуацию и темп.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CASES ============ -->
+<!-- CASES -->
 <section>
   <div class="wrap">
     <div class="section-head reveal" style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;max-width:none;flex-wrap:wrap">
       <div>
         <span class="eyebrow">До · после</span>
-        <h2 style="margin-top:18px">Работы клиники</h2>
+        <h2 style="margin-top:18px">Реальные работы</h2>
       </div>
-      <p class="lede" style="max-width:42ch;margin:0">Естественные результаты, без голливудских стандартов. Реальные пациенты — с их разрешения.</p>
+      <p class="lede" style="max-width:42ch;margin:0">Реставрации, которые выглядят как родная эмаль. Фото пациентов — с их разрешения.</p>
     </div>
 
     <div class="cases-grid">
       <article class="case reveal">
         <div class="case-imgs">
-          <img src="/images/case-2.webp" alt="До и после виниров" loading="lazy" decoding="async">
+          <img src="/images/case-1.webp" alt="До и после имплантации" loading="lazy" decoding="async">
           <span class="case-label" style="top:14px">До</span>
           <span class="case-label" style="top:auto;bottom:14px">После</span>
         </div>
         <div class="case-body">
           <div class="meta">Кейс 01</div>
-          <h3>Коррекция формы и оттенка</h3>
-          <p>Композитные виниры на верхний ряд — живой, естественный результат.</p>
+          <h3>Имплант + коронка в зоне улыбки</h3>
+          <p>Сохранили естественный оттенок и форму — визуально ничем не отличается от своих.</p>
         </div>
       </article>
 
       <article class="case reveal">
         <div class="case-imgs">
-          <img src="/images/case-1.webp" alt="До и после виниров" loading="lazy" decoding="async">
+          <img src="/images/case-2.webp" alt="До и после эстетической реставрации" loading="lazy" decoding="async">
           <span class="case-label" style="top:14px">До</span>
           <span class="case-label" style="top:auto;bottom:14px">После</span>
         </div>
         <div class="case-body">
           <div class="meta">Кейс 02</div>
-          <h3>Аккуратный композит</h3>
-          <p>Сохранили индивидуальность улыбки — без резких перемен.</p>
+          <h3>Восстановление линии улыбки</h3>
+          <p>Комплексная работа — форма, цвет и пропорции без эффекта «искусственности».</p>
         </div>
       </article>
 
       <article class="case reveal">
         <div class="case-imgs">
-          <img src="/images/case-3.webp" alt="До и после эстетической работы" loading="lazy" decoding="async">
+          <img src="/images/case-3.webp" alt="До и после восстановления формы зубов" loading="lazy" decoding="async">
           <span class="case-label" style="top:14px">До</span>
           <span class="case-label" style="top:auto;bottom:14px">После</span>
         </div>
         <div class="case-body">
           <div class="meta">Кейс 03</div>
-          <h3>Свежая ухоженная улыбка</h3>
-          <p>Композит в естественном оттенке, без эффекта «искусственности».</p>
+          <h3>Естественный результат имплантации</h3>
+          <p>Коронка повторяет форму ваших зубов — без видимых границ и «яркого» блеска.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section style="background:var(--bg-deeper)">
+<!-- FAQ -->
+<section style="background:var(--bg-deeper)" id="faq">
   <div class="wrap">
     <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="eyebrow">Частые вопросы</span>
-      <h2 style="margin-top:18px">Что обычно&nbsp;спрашивают</h2>
+      <h2 style="margin-top:18px">Что обычно спрашивают</h2>
     </div>
 
     <div class="faq">
       <div class="faq-item">
-        <button class="faq-q">Чем композитные виниры отличаются от керамических?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Композитные делаются прямо в кабинете и обычно быстрее по времени — это мягкий вход в эстетику. Керамика делается в лаборатории и дольше сохраняет внешний вид. Что подойдёт вам — обсудим лично.</div></div>
+        <button class="faq-q">Больно ли устанавливать имплант?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Процедура проходит под местной анестезией — во время установки вы не чувствуете боли. После приёма возможен лёгкий дискомфорт — это нормально и быстро проходит.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Больно ли делать процедуру?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Обычно нет — обработка минимальная, при необходимости используется местная анестезия. Сама процедура спокойная и комфортная.</div></div>
+        <button class="faq-q">Сколько служат импланты?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">При аккуратном обращении и регулярной гигиене современные импланты служат очень долго. Конкретные сроки зависят от ваших привычек и регулярных визитов к врачу.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Сколько служат композитные виниры?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">При аккуратном обращении и регулярной гигиене композит сохраняется в хорошем виде несколько лет. Раз в пару лет можно освежить полировку и продлить хороший вид.</div></div>
+        <button class="faq-q">Сколько длится восстановление?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Основной этап приживления — от нескольких недель до нескольких месяцев в зависимости от ситуации. Первые дни проходят спокойно: подробно объясняю, как ухаживать и на что обращать внимание.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Можно ли подобрать естественный цвет?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Да, это и есть моя задача. Оттенок выбираем под ваш тип внешности — оттенок кожи, цвет глаз, возраст. Чтобы улыбка выглядела «как ваша», только аккуратнее.</div></div>
+        <button class="faq-q">Можно ли поставить имплант сразу после удаления зуба?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Иногда да — в современной имплантологии это возможно при подходящих условиях. Но решение принимаем после диагностики — я честно скажу, если лучше выбрать другой подход.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Нужно ли сильно обтачивать зубы?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Нет. Композитные виниры предполагают минимальное вмешательство в зубы — это одно из их главных преимуществ.</div></div>
+        <button class="faq-q">Будет ли имплант выглядеть естественно?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Это одна из главных задач. Форму и оттенок коронки подбираем под соседние зубы, чтобы никто из внешних людей не видел, что была работа.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Подойдут ли виниры именно мне?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Понять это можно только после осмотра. Иногда вместо виниров рациональнее предложить отбеливание, реставрации или ортодонтию — я честно скажу, если виниры в вашем случае не лучшее решение.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Можно ли просто проконсультироваться?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Конечно. Можно начать с разговора в мессенджере — пришлите фото улыбки, я подскажу, с чего лучше начать и нужно ли вообще что-то делать прямо сейчас.</div></div>
+        <button class="faq-q">Что делать, если я боюсь процедуры?<span class="faq-toggle"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Это нормально. Можно начать с разговора в мессенджере — без обязательств, просто чтобы понять варианты. Двигаемся в комфортном для вас темпе.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
+<!-- FINAL CTA -->
 <section class="final" id="final">
   <div class="wrap final-inner reveal">
     <span class="eyebrow" style="justify-content:center">Связь со мной</span>
-    <h2 style="margin-top:20px">Хотите понять, подойдут ли вам композитные виниры?</h2>
-    <p class="lede">Напишите мне в удобный мессенджер. Можно отправить фото улыбки — подскажу, с чего лучше начать. Без обязательств и без записи на приём «вслепую».</p>
+    <h2 style="margin-top:20px">Хотите понять, подойдёт ли вам имплантация?</h2>
+    <p class="lede">Напишите мне в удобный мессенджер — можно просто задать вопрос или отправить фото. Без обязательств и без записи на приём «вслепую».</p>
 
     <div class="final-cta">
       <a class="btn btn-msg-dark btn-lg" href="#" data-msg="telegram">
@@ -1102,7 +1149,6 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap foot">
     <div class="brand">
@@ -1114,8 +1160,8 @@
     </div>
     <div class="foot-links">
       <a href="Виниры - Лендинг.html">Керамические виниры</a>
+      <a href="Композитные виниры - Лендинг.html">Композитные виниры</a>
       <a href="Кариес - Лендинг.html">Кариес</a>
-      <a href="Имплантация - Лендинг.html">Имплантация</a>
       <a href="#" data-msg="telegram">Telegram</a>
       <a href="#" data-msg="max">Max</a>
       <a href="#" data-msg="instagram">Instagram</a>
@@ -1124,7 +1170,6 @@
   </div>
 </footer>
 
-<!-- ============ MOBILE STICKY BAR ============ -->
 <nav class="mobile-bar" aria-label="Быстрая связь">
   <a class="tg" href="#" data-msg="telegram"><span class="chip"><svg style="width:14px;height:14px;color:#fff"><use href="#i-tg"/></svg></span>Telegram</a>
   <a class="max" href="#" data-msg="max"><span class="chip"><svg style="width:14px;height:14px;color:#fff"><use href="#i-max"/></svg></span>Max</a>
@@ -1132,7 +1177,6 @@
 </nav>
 
 <script>
-  // ——— hero portrait slider ———
   (function initSlider(){
     const root = document.getElementById('hero-slider');
     if(!root) return;
@@ -1142,7 +1186,6 @@
     const nextBtn = root.querySelector('.slider-arrow.next');
     let idx = 0, timer = null;
     const INTERVAL = 5000;
-
     function go(n){
       idx = (n + slides.length) % slides.length;
       slides.forEach((s,i) => s.classList.toggle('is-active', i === idx));
@@ -1150,14 +1193,11 @@
     }
     function start(){ stop(); timer = setInterval(() => go(idx + 1), INTERVAL); }
     function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-
     dots.forEach((d,i) => d.addEventListener('click', () => { go(i); start(); }));
     prevBtn.addEventListener('click', () => { go(idx - 1); start(); });
     nextBtn.addEventListener('click', () => { go(idx + 1); start(); });
     root.addEventListener('mouseenter', stop);
     root.addEventListener('mouseleave', start);
-
-    // swipe
     let touchX = null;
     root.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stop(); }, {passive:true});
     root.addEventListener('touchend', e => {
@@ -1166,16 +1206,13 @@
       if(Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
       touchX = null; start();
     }, {passive:true});
-
     start();
   })();
 
-  // top bar shadow on scroll
   const tb = document.getElementById('topbar');
   const onScroll = () => tb.classList.toggle('scrolled', window.scrollY > 12);
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
     const a = item.querySelector('.faq-a');
@@ -1185,13 +1222,11 @@
     });
   });
 
-  // reveal on scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // smooth scroll for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const href = a.getAttribute('href');

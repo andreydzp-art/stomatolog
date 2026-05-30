@@ -8,6 +8,12 @@ on:
       - 'index.html'
       - 'image-slot.js'
       - 'images/**'
+      - 'karies/**'
+      - 'luminir/**'
+      - 'vinir/**'
+      - 'implantacia/**'
+      - '.htaccess'
+      - 'scripts/build-pages.mjs'
       - '.github/workflows/deploy.yml'
   workflow_dispatch: {}
 
@@ -37,6 +43,7 @@ jobs:
             **/.git*
             **/.github/**
             **/docs/**
+            **/scripts/**
             README.md
             CURSOR.md
             CNAME
@@ -51,7 +58,11 @@ jobs:
             if grep -qF 'hero-grid' /tmp/nkolesnik.html \
                && grep -qF 'Natalia Kolesnik' /tmp/nkolesnik.html \
                && grep -qF 'doctor-hero2.png' /tmp/nkolesnik.html; then
-              echo "=== smoke OK ==="
+              for p in karies luminir vinir implantacia; do
+                curl -fsSL --max-time 25 "https://nkolesnik.com/${p}/" -o "/tmp/nk-${p}.html" || exit 1
+                grep -qF 'hero-grid' "/tmp/nk-${p}.html" || exit 1
+              done
+              echo "=== smoke OK (root + 4 landings) ==="
               exit 0
             fi
             echo "attempt $i: waiting for CDN/cache..."

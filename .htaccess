@@ -1,0 +1,7 @@
+DirectoryIndex index.html
+
+# /karies → /karies/
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(karies|luminir|vinir|implantacia)$ /$1/ [R=301,L]
