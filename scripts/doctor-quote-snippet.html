@@ -3,21 +3,21 @@
 <style>
   .doctor-quote{
     background:var(--bg);
-    padding:54px 0 62px;
+    padding:30px 0 44px;
   }
   @media (min-width:1200px){
-    .doctor-quote{padding:40px 0 48px}
+    .doctor-quote{padding:20px 0 36px}
   }
   @media (max-width:720px){
-    .doctor-quote{padding:42px 0 48px}
+    .doctor-quote{padding:24px 0 36px}
   }
   .doctor-quote__label{
     font-size:11px;
     letter-spacing:.17em;
     text-transform:uppercase;
     color:var(--ink-mute);
-    margin:0 auto 24px;
-    max-width:920px;
+    margin:0 auto 18px;
+    max-width:650px;
   }
   .doctor-quote__label::before{
     content:"";
@@ -28,41 +28,16 @@
     margin-right:14px;
     opacity:.65;
   }
-  .doctor-quote__inner{
-    display:grid;
-    grid-template-columns:minmax(40px,60px) minmax(0,1fr);
-    gap:18px 44px;
-    align-items:start;
-    max-width:920px;
-    margin:0 auto;
-  }
-  @media (max-width:720px){
-    .doctor-quote__inner{
-      grid-template-columns:32px 1fr;
-      gap:10px 16px;
-    }
-  }
-  .doctor-quote__mark{
-    font-family:var(--serif);
-    font-size:clamp(60px,7vw,88px);
-    line-height:.78;
-    font-weight:400;
-    color:var(--gold);
-    opacity:.28;
-    letter-spacing:-0.06em;
-    margin-top:2px;
-    user-select:none;
-  }
   .doctor-quote__content{
-    margin:0;
+    margin:0 auto;
     padding:0;
     border:0;
-    max-width:760px;
+    max-width:650px;
   }
   .doctor-quote__text{
     font-family:var(--serif);
-    font-size:clamp(20px,1.7vw,24px);
-    line-height:1.46;
+    font-size:clamp(20px,1.55vw,23px);
+    line-height:1.45;
     letter-spacing:-.012em;
     color:var(--ink);
   }
@@ -70,7 +45,7 @@
     margin:0;
   }
   .doctor-quote__text p + p{
-    margin-top:.9em;
+    margin-top:.85em;
   }
   .doctor-quote__text em{
     font-style:italic;
@@ -80,14 +55,11 @@
 <section class="doctor-quote" aria-labelledby="doctor-quote-title">
   <div class="wrap">
     <p class="doctor-quote__label reveal" id="doctor-quote-title">Личный подход врача</p>
-    <div class="doctor-quote__inner reveal">
-      <div class="doctor-quote__mark" aria-hidden="true">“</div>
-      <blockquote class="doctor-quote__content">
-        <div class="doctor-quote__text">
-          <p>Современная стоматология — это сочетание точности, эстетики и&nbsp;человеческого отношения.</p>
-          <p><em>Поэтому я всегда стараюсь</em> сделать лечение максимально понятным, спокойным и&nbsp;комфортным.</p>
-        </div>
-      </blockquote>
-    </div>
+    <blockquote class="doctor-quote__content reveal">
+      <div class="doctor-quote__text">
+        <p>Для меня хорошая стоматология — это не только качественное лечение.</p>
+        <p><em>Это когда пациент</em> чувствует себя спокойно, понимает каждый этап и&nbsp;уверен в&nbsp;результате.</p>
+      </div>
+    </blockquote>
   </div>
 </section>
