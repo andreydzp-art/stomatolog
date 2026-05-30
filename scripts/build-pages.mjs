@@ -44,6 +44,23 @@ function fixAssetPaths(html) {
     .replace(/url\(images\//g, 'url(/images/');
 }
 
+function insertDoctorQuote(html) {
+  if (html.includes('doctor-quote')) return html;
+  const anchor = `          <span class="ct"><h3>Международное обучение</h3><p>Постоянное повышение квалификации</p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+  if (!html.includes(anchor)) return html;
+  const snip = fs.readFileSync(
+    path.join(ROOT, 'scripts/doctor-quote-snippet.html'),
+    'utf8'
+  );
+  return html.replace(anchor, anchor + '\n' + snip);
+}
+
 function fixFooterPadding(html) {
   return html.replace(
     /footer\{padding:48px 0 120px;/g,
@@ -86,6 +103,7 @@ function prepareHtml(raw) {
   html = applyDesktop1200(html, desktop1200);
   html = fixFooterLinks(html);
   html = fixFooterPadding(html);
+  html = insertDoctorQuote(html);
   return html;
 }
 
@@ -108,7 +126,7 @@ const pages = [
 for (const { dir, source, polished } of pages) {
   const raw = fs.readFileSync(source, 'utf8');
   const html = polished
-    ? fixFooterPadding(fixFooterLinks(fixAssetPaths(raw)))
+    ? insertDoctorQuote(fixFooterPadding(fixFooterLinks(fixAssetPaths(raw))))
     : prepareHtml(raw);
   const outDir = path.join(ROOT, dir);
   fs.mkdirSync(outDir, { recursive: true });
@@ -117,8 +135,10 @@ for (const { dir, source, polished } of pages) {
 }
 
 // Root: absolute asset paths (same as /luminir content)
-const rootHtml = fixFooterPadding(
-  fixFooterLinks(fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')))
+const rootHtml = insertDoctorQuote(
+  fixFooterPadding(
+    fixFooterLinks(fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')))
+  )
 );
 fs.writeFileSync(path.join(ROOT, 'index.html'), rootHtml, 'utf8');
 console.log('OK / (root index.html paths)');

@@ -833,6 +833,125 @@
   </div>
 </section>
 
+
+<!-- ============ DOCTOR QUOTE ============ -->
+<style>
+  .doctor-quote{
+    background:var(--bg);
+    padding:88px 0 100px;
+  }
+  @media (min-width:1200px){
+    .doctor-quote{padding:64px 0 78px}
+  }
+  @media (max-width:720px){
+    .doctor-quote{padding:64px 0 72px}
+  }
+  .doctor-quote__label{
+    font-size:11px;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    margin:0 auto 44px;
+    max-width:920px;
+  }
+  .doctor-quote__label::before{
+    content:"";
+    display:inline-block;
+    width:28px;height:1px;
+    background:var(--gold);
+    vertical-align:middle;
+    margin-right:14px;
+    opacity:.65;
+  }
+  .doctor-quote__inner{
+    display:grid;
+    grid-template-columns:minmax(48px,72px) minmax(0,1fr);
+    gap:28px 52px;
+    align-items:start;
+    max-width:920px;
+    margin:0 auto;
+  }
+  @media (max-width:720px){
+    .doctor-quote__inner{
+      grid-template-columns:40px 1fr;
+      gap:16px 20px;
+    }
+  }
+  .doctor-quote__mark{
+    font-family:var(--serif);
+    font-size:clamp(72px,9vw,108px);
+    line-height:.78;
+    font-weight:400;
+    color:var(--gold);
+    opacity:.28;
+    letter-spacing:-0.06em;
+    margin-top:2px;
+    user-select:none;
+  }
+  .doctor-quote__content{
+    margin:0;
+    padding:0;
+    border:0;
+    max-width:780px;
+  }
+  .doctor-quote__text{
+    font-family:var(--serif);
+    font-size:clamp(21px,2.05vw,26px);
+    line-height:1.52;
+    letter-spacing:-.012em;
+    color:var(--ink);
+  }
+  .doctor-quote__text p{
+    margin:0;
+  }
+  .doctor-quote__text p + p{
+    margin-top:1.35em;
+  }
+  .doctor-quote__text em{
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  .doctor-quote__sig{
+    margin-top:40px;
+    padding-top:0;
+  }
+  .doctor-quote__sig .name{
+    display:block;
+    font-family:var(--serif);
+    font-size:clamp(20px,1.6vw,24px);
+    line-height:1.15;
+    letter-spacing:-.02em;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .doctor-quote__sig .role{
+    display:block;
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+</style>
+<section class="doctor-quote" aria-labelledby="doctor-quote-title">
+  <div class="wrap">
+    <p class="doctor-quote__label reveal" id="doctor-quote-title">Личный подход врача</p>
+    <div class="doctor-quote__inner reveal">
+      <div class="doctor-quote__mark" aria-hidden="true">“</div>
+      <blockquote class="doctor-quote__content">
+        <div class="doctor-quote__text">
+          <p>Я считаю, что хорошая стоматология — это сочетание медицинской точности, эстетики и&nbsp;человеческого отношения.</p>
+          <p><em>Поэтому для меня важно</em> не только качественно выполнить работу, но и&nbsp;сделать лечение спокойным, понятным и&nbsp;комфортным для пациента.</p>
+        </div>
+        <footer class="doctor-quote__sig">
+          <span class="name">Наталия Колесник</span>
+          <span class="role">Стоматолог-хирург • Ортопед</span>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PAIN POINTS ============ -->
 <section class="pain-section">
   <div class="wrap">
