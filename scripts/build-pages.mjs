@@ -29,12 +29,26 @@ function extractDesktop1200(html) {
 const heroBundle = extractHeroBundle(REF);
 const desktop1200 = extractDesktop1200(REF);
 
+const FOOT_LINKS = `    <div class="foot-links">
+      <a href="/luminir/">Композитные виниры</a>
+      <a href="/vinir/">Керамические виниры</a>
+      <a href="/karies/">Кариес</a>
+      <a href="/implantacia/">Имплантация</a>
+`;
+
 function fixAssetPaths(html) {
   return html
     .replace(/src="images\//g, 'src="/images/')
     .replace(/href="images\//g, 'href="/images/')
     .replace(/src="image-slot\.js"/g, 'src="/image-slot.js"')
     .replace(/url\(images\//g, 'url(/images/');
+}
+
+function fixFooterLinks(html) {
+  return html.replace(
+    /    <div class="foot-links">[\s\S]*?      <a href="#" data-msg="telegram">/,
+    FOOT_LINKS + '      <a href="#" data-msg="telegram">'
+  );
 }
 
 function applyHeroBundle(html, bundle) {
@@ -63,6 +77,7 @@ function prepareHtml(raw) {
   let html = fixAssetPaths(raw);
   html = applyHeroBundle(html, heroBundle);
   html = applyDesktop1200(html, desktop1200);
+  html = fixFooterLinks(html);
   return html;
 }
 
@@ -84,7 +99,7 @@ const pages = [
 
 for (const { dir, source, polished } of pages) {
   const raw = fs.readFileSync(source, 'utf8');
-  const html = polished ? fixAssetPaths(raw) : prepareHtml(raw);
+  const html = polished ? fixFooterLinks(fixAssetPaths(raw)) : prepareHtml(raw);
   const outDir = path.join(ROOT, dir);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
@@ -92,6 +107,6 @@ for (const { dir, source, polished } of pages) {
 }
 
 // Root: absolute asset paths (same as /luminir content)
-const rootHtml = fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8'));
+const rootHtml = fixFooterLinks(fixAssetPaths(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')));
 fs.writeFileSync(path.join(ROOT, 'index.html'), rootHtml, 'utf8');
 console.log('OK / (root index.html paths)');
